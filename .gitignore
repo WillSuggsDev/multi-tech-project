@@ -93,7 +93,7 @@ dist
 
 # Gatsby files
 .cache/
-# Comment in the public line in if your project uses Gatsby and not Next.js
+# Comment in the public line if your project uses Gatsby and not Next.js
 # https://nextjs.org/blog/next-9-1#public-directory-support
 # public
 
@@ -128,3 +128,20 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# Java build output
+bin/
+target/
+
+# .NET build output
+bin/
+obj/
+
+# Kafka log and data directories
+logs/
+data/
+
+# React build output
+build/
+dist/
+node_modules/
