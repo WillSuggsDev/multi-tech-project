@@ -136,7 +136,7 @@ target/
 # .NET build output
 bin/
 obj/
-
+*.vs
 # Kafka log and data directories
 logs/
 data/
