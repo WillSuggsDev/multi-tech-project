@@ -8,7 +8,6 @@ namespace web_api_dotnet_unit_test.Services
     public class BlogServiceTest
     {
 
-
         [Test]
         public void GetAllPost_ReturnsCorrectCount()
         {
