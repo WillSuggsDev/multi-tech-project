@@ -1,0 +1,28 @@
+version: '24.0.6'
+
+services:
+  web-api-dotnet:
+    image: web-api-dotnet:latest
+    build:
+        context: .
+        dockerfile: Dockerfile
+    ports:
+        - "5000:80"
+    depends_on:
+        - sql-server
+    environment:
+        - ConnectionStrings:DefaultConnection=Server=localhost,1433;Database=blog_db;User=root;Password=password1!;MultipleActiveResultSets=true;
+  
+  sql-server:
+    image: mcr.microsoft.com/mssql/server
+    ports:
+        - "1433:1433"
+    environment:
+        SA_PASSWORD: password1!
+        ACCEPT_EULA: Y
+
+  apply-migrations:
+    build:
+        context: .
+        dockerfile: Dockerfile
+        target: migrations
